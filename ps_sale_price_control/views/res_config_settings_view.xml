@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="general_setting_inherit_sale_price_control" model="ir.ui.view">
+        <field name="name">general.setting.inherit.sale.price.control</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+			<xpath expr="//block[@id='pricing_setting_container']" position="inside">
+                <setting id="enable_sale_minimum_price" title="Sale Minimum Price">
+                            <field name="enable_sale_minimum_price" groups="ps_sale_price_control.group_sale_price_control"/>
+                </setting>
+            </xpath>
+        </field>
+    </record>
+</odoo>

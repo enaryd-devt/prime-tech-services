@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- ================= FACTURE ================= -->
+    <template id="report_invoice_signature"
+              inherit_id="account.report_invoice_document">
+
+        <xpath expr="//div[contains(@class,'article')]" position="inside">
+
+            <table style="width:100%; margin-top:40px;">
+                <tr>
+                    <td style="width:50%; text-align:left;">
+                        <strong>LE VENDEUR</strong><br/>
+                        <t t-esc="o.invoice_user_id.name"/>
+                        <br/><br/>
+                        ______________________
+                    </td>
+
+                    <td style="width:50%; text-align:right;">
+                        <strong>LE CLIENT</strong><br/>
+                        <t t-esc="o.partner_id.name"/>
+                        <br/><br/>
+                        ______________________
+                    </td>
+                </tr>
+            </table>
+
+        </xpath>
+    </template>
+
+    <!-- ================= DEVIS / PROFORMA ================= -->
+    <template id="report_sale_signature"
+              inherit_id="sale.report_saleorder_document">
+
+        <xpath expr="//div[contains(@class,'article')]" position="inside">
+
+            <table style="width:100%; margin-top:40px;">
+                <tr>
+                    <td style="width:50%; text-align:left;">
+                        <strong>LE VENDEUR</strong><br/>
+                        <t t-esc="o.user_id.name"/>
+                        <br/><br/>
+                        ______________________
+                    </td>
+
+                    <td style="width:50%; text-align:right;">
+                        <strong>LE CLIENT</strong><br/>
+                        <t t-esc="o.partner_id.name"/>
+                        <br/><br/>
+                        ______________________
+                    </td>
+                </tr>
+            </table>
+
+        </xpath>
+    </template>
+
+    <!-- ================= REÇU DE PAIEMENT ================= -->
+    <template id="report_payment_signature"
+              inherit_id="account.report_payment_receipt_document">
+
+        <xpath expr="//div[contains(@class,'article')]" position="inside">
+
+            <table style="width:100%; margin-top:40px;">
+                <tr>
+                    <td style="width:50%; text-align:left;">
+                        <strong>CAISSIER</strong><br/>
+                        <t t-esc="o.create_uid.name"/>
+                        <br/><br/>
+                        ______________________
+                    </td>
+
+                    <td style="width:50%; text-align:right;">
+                        <strong>CLIENT</strong><br/>
+                        <t t-esc="o.partner_id.name"/>
+                        <br/><br/>
+                        ______________________
+                    </td>
+                </tr>
+            </table>
+
+        </xpath>
+    </template>
+
+</odoo>

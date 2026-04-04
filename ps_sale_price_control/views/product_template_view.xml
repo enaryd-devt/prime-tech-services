@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+     <record id="inherit_sale_price_control_product_template_form_view" model="ir.ui.view">
+        <field name="name">inherit.sale.price.control.product.template.form.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='categ_id']" position="after">
+               <field name="minimum_price" string="Minimum Price"  widget='monetary' options="{'currency_field': 'currency_id'}"  groups="ps_sale_price_control.group_sale_price_control"
+               invisible="not is_sale_price_control"/>
+               <field name="is_sale_price_control" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
