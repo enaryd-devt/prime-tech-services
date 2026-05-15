@@ -156,8 +156,8 @@
                                     <br/>
                                 </t>
 
-                                <strong>Référence client :</strong>
-                                <span t-field="o.partner_id.ref"/>
+                                <strong>Téléphone :</strong>
+                                <span t-field="o.partner_id.phone"/>
                                 <br/>
 
 
