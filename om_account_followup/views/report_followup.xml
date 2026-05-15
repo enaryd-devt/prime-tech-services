@@ -104,13 +104,13 @@
                                 }
 
                                 .signature-box {
-                                    width: 100px;
+                                    width: 250px;
                                     text-align: center;
                                     float: right;
                                 }
 
                                 .signature-line {
-                                    margin-top: 60px;
+                                    margin-top: 20px;
                                     border-top: 1px solid #000;
                                     padding-top: 5px;
                                     font-size: 12px;
