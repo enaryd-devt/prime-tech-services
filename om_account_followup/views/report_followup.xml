@@ -239,8 +239,11 @@
 
                                             <t t-if="inv.invoice_line_ids">
 
-                                                <span t-esc="inv.invoice_line_ids[0].name[:120]"/>
-
+                                                    <span t-esc="
+                                                        (inv.invoice_line_ids[0].name[:120] + '...')
+                                                        if len(inv.invoice_line_ids[0].name) > 120
+                                                        else inv.invoice_line_ids[0].name
+                                                    "/>
                                             </t>
 
                                         </td>
